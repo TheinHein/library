@@ -1,0 +1,153 @@
+html {
+  box-sizing: border-box;
+  font-family: "helvetica neue", helvetica, arial, sans-serif;
+}
+
+.formControl {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  background-color: rgb(238, 238, 238);
+  box-shadow: 1px 1px 5px 1px black;
+  border-radius: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 25px;
+  margin-bottom: 15px;
+}
+
+#form input {
+  height: 35px;
+  border: none;
+}
+
+.form-title {
+  width: 100%;
+  background-color: rgb(19, 70, 129);
+  height: 50px;
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  align-items: center;
+}
+
+.form-title h3 {
+  margin: 0;
+  margin-left: 15px;
+  padding: 10px;
+  color: white;
+}
+
+.buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+button {
+  border-style: none;
+  box-shadow: 0px 5px 5px 0px rgb(105, 100, 100);
+  text-decoration: none;
+  width: 200px;
+  height: 40px;
+  border-radius: 50px;
+  background-color: rgb(19, 70, 129);
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(14, 56, 104);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tcontainer {
+  width: 90%;
+}
+
+/* spacing */
+
+table {
+  font-size: 0.8rem;
+  width: 100%;
+  border-collapse: collapse;
+  border: 2px solid rgb(0, 0, 0);
+  margin-top: 20px;
+}
+
+thead th:nth-child(1) {
+  width: 30%;
+}
+
+thead th:nth-child(2) {
+  width: 20%;
+}
+
+thead th:nth-child(3) {
+  width: 5%;
+}
+
+thead th:nth-child(4) {
+  width: 5%;
+}
+
+th,
+td {
+  padding: 15px;
+}
+
+/* typography */
+tbody th {
+  text-align: left;
+}
+tbody td {
+  text-align: center;
+}
+
+/* graphics and colors */
+
+thead {
+  color: white;
+  text-shadow: 1px 1px 1px rgb(53, 51, 51);
+}
+
+thead th {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.5)
+  );
+  border: 1px solid rgb(255, 255, 255);
+}
+tbody tr {
+  border: 1px solid rgb(255, 255, 255);
+}
+/* zebra striping */
+
+tbody tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+tbody tr:nth-child(even) {
+  background-color: rgb(19, 70, 129);
+  color: white;
+}
+
+table {
+  background-color: rgb(19, 70, 129);
+  box-shadow: 5px 5px 10px 0px black;
+}
