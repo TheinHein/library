@@ -30,6 +30,9 @@ function createABookTableRow(book) {
   const author = document.createElement("td");
   const numberOfPages = document.createElement("td");
   const isRead = document.createElement("td");
+  const deleteBtn = document.createElement("button");
+  deleteBtn.textContent = "x";
+  deleteBtn.classList.add("del-btn");
   title.setAttribute("scope", "row");
   title.textContent = book.title;
   author.textContent = book.author;
@@ -39,6 +42,7 @@ function createABookTableRow(book) {
   tableRow.appendChild(author);
   tableRow.appendChild(numberOfPages);
   tableRow.appendChild(isRead);
+  tableRow.appendChild(deleteBtn);
   return tableRow;
 }
 

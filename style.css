@@ -65,6 +65,16 @@ button {
   cursor: pointer;
 }
 
+.del-btn {
+  position: relative;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  margin-top: 5px;
+  box-shadow: none;
+  transform: translate(-50%);
+}
+
 button:hover {
   background-color: rgb(14, 56, 104);
 }
@@ -102,6 +112,9 @@ thead th:nth-child(3) {
 }
 
 thead th:nth-child(4) {
+  width: 5%;
+}
+thead th:nth-child(5) {
   width: 5%;
 }
 
@@ -145,6 +158,22 @@ tbody tr:nth-child(odd) {
 tbody tr:nth-child(even) {
   background-color: rgb(19, 70, 129);
   color: white;
+}
+
+tbody tr:nth-child(odd) .del-btn {
+  background-color: rgb(19, 70, 129);
+}
+tbody tr:nth-child(odd) .del-btn:hover {
+  background-color: rgb(14, 56, 104);
+}
+
+tbody tr:nth-child(even) .del-btn {
+  background-color: rgb(255, 255, 255);
+  color: black;
+}
+tbody tr:nth-child(even) .del-btn:hover {
+  background-color: rgb(231, 231, 231);
+  color: black;
 }
 
 table {
