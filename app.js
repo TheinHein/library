@@ -1,12 +1,4 @@
-const myLibrary = [
-  { title: "The Hobbit", author: "Tjj", numberOfPages: 453, isRead: "No" },
-  {
-    title: "Lord of the Rings",
-    author: "Toyel",
-    numberOfPages: 234,
-    isRead: "No",
-  },
-];
+const myLibrary = [];
 
 // ** JS Functionality ** //
 
@@ -16,6 +8,14 @@ function Book(title, author, numberOfPages, isRead) {
   this.numberOfPages = numberOfPages;
   this.isRead = isRead;
 }
+
+Book.prototype.changeReadStat = function () {
+  if (this.isRead === "No") {
+    return (this.isRead = "Yes");
+  } else if (this.isRead === "Yes") {
+    return (this.isRead = "No");
+  }
+};
 
 function createBook(title, author, numberOfPages, isRead) {
   return new Book(title, author, numberOfPages, isRead);
@@ -85,6 +85,7 @@ function createBookRow(book) {
   const author = document.createElement("td");
   const numberOfPages = document.createElement("td");
   const isRead = document.createElement("td");
+  const readStat = document.createElement("td");
   const delBookContainer = document.createElement("td");
   const deleteBookBtn = createDelBookBtn(myLibrary);
   delBookContainer.appendChild(deleteBookBtn);
@@ -98,7 +99,11 @@ function createBookRow(book) {
   bookRow.appendChild(author);
   bookRow.appendChild(numberOfPages);
   bookRow.appendChild(isRead);
+  bookRow.appendChild(readStat);
   bookRow.appendChild(delBookContainer);
+  const readStatBtn = createReadStatBtn();
+  readStatBtn.textContent = "\u2713";
+  readStat.appendChild(readStatBtn);
   return bookRow;
 }
 
@@ -115,3 +120,27 @@ function displayBooks(books) {
 }
 
 displayBooks(myLibrary);
+
+function createReadStatBtn() {
+  const readStatBtn = document.createElement("button");
+  readStatBtn.classList.add("read-stat-btn");
+  readStatBtn.dataset.key = myLibrary.length - 1;
+  readStatBtn.addEventListener("click", (e) => {
+    const bookIndex = parseInt(e.target.dataset.key);
+    myLibrary.map((book) => {
+      if (myLibrary.indexOf(book) === bookIndex) {
+        book.changeReadStat();
+      }
+    });
+    library.childNodes.forEach((book) => {
+      if (parseInt(book.dataset.key) === bookIndex) {
+        if (book.childNodes[3].textContent === "Yes") {
+          book.childNodes[3].textContent = "No";
+        } else if (book.childNodes[3].textContent === "No") {
+          book.childNodes[3].textContent = "Yes";
+        }
+      }
+    });
+  });
+  return readStatBtn;
+}

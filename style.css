@@ -3,15 +3,27 @@ html {
   font-family: "helvetica neue", helvetica, arial, sans-serif;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  text-align: center;
+}
+
 .form-container {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 400px;
   background-color: rgb(238, 238, 238);
   box-shadow: 1px 1px 5px 1px black;
   border-radius: 10px;
+  width: 300px;
+  min-width: 300px;
 }
 
 .hidden {
@@ -24,6 +36,7 @@ html {
   gap: 15px;
   padding: 25px;
   margin-bottom: 15px;
+  text-align: left;
 }
 
 #new-form input {
@@ -70,7 +83,8 @@ button:hover {
   background-color: rgb(14, 56, 104);
 }
 
-.del-book-btn {
+.del-book-btn,
+.read-stat-btn {
   width: 40px;
   height: 30px;
   box-shadow: none;
@@ -111,7 +125,12 @@ thead th:nth-child(3) {
 thead th:nth-child(4) {
   width: 5%;
 }
+
 thead th:nth-child(5) {
+  width: 5%;
+}
+
+thead th:nth-child(6) {
   width: 5%;
 }
 
@@ -121,9 +140,11 @@ td {
 }
 
 /* typography */
+
 tbody th {
   text-align: left;
 }
+
 tbody td {
   text-align: center;
 }
@@ -143,9 +164,11 @@ thead th {
   );
   border-right: 1px solid rgb(94, 93, 93);
 }
+
 thead th:nth-child(5) {
   border-right: none;
 }
+
 /* zebra striping */
 
 tbody tr:nth-child(odd) {
@@ -160,8 +183,34 @@ table {
   font-size: 0.8rem;
   width: 100%;
   border-collapse: collapse;
-
   margin-top: 20px;
   background-color: rgb(19, 70, 129);
   box-shadow: 2px 2px 10px 0px black;
+}
+
+.read-stat-btn {
+  background-color: rgb(19, 70, 129);
+}
+
+.read-stat-btn:hover {
+  box-shadow: 0px 1px 1px 0px black;
+  background-color: rgb(14, 56, 104);
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  background-color: bisque;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+}
+header {
+  background-color: bisque;
+  margin-bottom: 30px;
+}
+header h1 {
+  margin: 0;
+  padding: 15px;
 }
