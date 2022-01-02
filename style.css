@@ -3,7 +3,7 @@ html {
   font-family: "helvetica neue", helvetica, arial, sans-serif;
 }
 
-.formControl {
+.form-container {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -18,7 +18,7 @@ html {
   display: none;
 }
 
-#form {
+#new-form {
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -26,7 +26,7 @@ html {
   margin-bottom: 15px;
 }
 
-#form input {
+#new-form input {
   height: 35px;
   border: none;
 }
@@ -55,7 +55,7 @@ html {
 
 button {
   border-style: none;
-  box-shadow: 0px 5px 5px 0px rgb(105, 100, 100);
+  box-shadow: 0px 4px 3px 0px black;
   text-decoration: none;
   width: 200px;
   height: 40px;
@@ -65,18 +65,23 @@ button {
   cursor: pointer;
 }
 
-.del-btn {
-  position: relative;
-  left: 50%;
-  width: 30px;
-  height: 30px;
-  margin-top: 5px;
-  box-shadow: none;
-  transform: translate(-50%);
+button:hover {
+  box-shadow: 0px 3px 3px 0px black;
+  background-color: rgb(14, 56, 104);
 }
 
-button:hover {
-  background-color: rgb(14, 56, 104);
+.del-book-btn {
+  width: 40px;
+  height: 30px;
+  box-shadow: none;
+  background-color: rgb(197, 25, 25);
+  box-shadow: 0px 2px 2px 0px black;
+  border-radius: 5px;
+}
+
+.del-book-btn:hover {
+  background-color: rgb(165, 20, 20);
+  box-shadow: 0px 1px 1px 0px black;
 }
 
 .main {
@@ -85,19 +90,11 @@ button:hover {
   align-items: center;
 }
 
-.tcontainer {
+.table-container {
   width: 90%;
 }
 
 /* spacing */
-
-table {
-  font-size: 0.8rem;
-  width: 100%;
-  border-collapse: collapse;
-  border: 2px solid rgb(0, 0, 0);
-  margin-top: 20px;
-}
 
 thead th:nth-child(1) {
   width: 30%;
@@ -144,10 +141,10 @@ thead th {
     rgba(0, 0, 0, 0.1),
     rgba(0, 0, 0, 0.5)
   );
-  border: 1px solid rgb(255, 255, 255);
+  border-right: 1px solid rgb(94, 93, 93);
 }
-tbody tr {
-  border: 1px solid rgb(255, 255, 255);
+thead th:nth-child(5) {
+  border-right: none;
 }
 /* zebra striping */
 
@@ -156,27 +153,15 @@ tbody tr:nth-child(odd) {
 }
 
 tbody tr:nth-child(even) {
-  background-color: rgb(19, 70, 129);
-  color: white;
-}
-
-tbody tr:nth-child(odd) .del-btn {
-  background-color: rgb(19, 70, 129);
-}
-tbody tr:nth-child(odd) .del-btn:hover {
-  background-color: rgb(14, 56, 104);
-}
-
-tbody tr:nth-child(even) .del-btn {
-  background-color: rgb(255, 255, 255);
-  color: black;
-}
-tbody tr:nth-child(even) .del-btn:hover {
-  background-color: rgb(231, 231, 231);
-  color: black;
+  background-color: rgb(226, 226, 226);
 }
 
 table {
+  font-size: 0.8rem;
+  width: 100%;
+  border-collapse: collapse;
+
+  margin-top: 20px;
   background-color: rgb(19, 70, 129);
-  box-shadow: 5px 5px 10px 0px black;
+  box-shadow: 2px 2px 10px 0px black;
 }
