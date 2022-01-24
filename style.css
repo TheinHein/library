@@ -46,6 +46,15 @@ body {
   margin-top: 4px;
 }
 
+#new-form input {
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+#new-form input:invalid:required {
+  border: 1px solid red;
+}
+
 .form-title {
   width: 100%;
   background-color: rgb(19, 70, 129);

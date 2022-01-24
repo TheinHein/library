@@ -43,6 +43,7 @@ newFormBtn.addEventListener("click", (e) => {
 
 cancelFormBtn.addEventListener("click", (e) => {
   formContainer.classList.toggle("hidden");
+  newForm.reset();
 });
 
 newForm.addEventListener("submit", (e) => {
@@ -56,6 +57,7 @@ newForm.addEventListener("submit", (e) => {
   createBookRow(book);
   addBookRow(book);
   formContainer.classList.toggle("hidden");
+  newForm.reset();
 });
 
 function delBookRow(bookIndex) {
